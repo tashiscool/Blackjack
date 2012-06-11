@@ -22,7 +22,7 @@ public class DeckTester {
 	public void testRandomCard()
 	{
 		Deck deck = new Deck();
-		String[] validarr = {"2,3,4,5,6,7,8,9,10,J,Q,K,A"};
+		String[] validarr = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
 		Map<String, Integer> cardcounter = new HashMap<String, Integer>();
 		for (int i = 0; i< 52; i++)
 		{
@@ -33,7 +33,7 @@ public class DeckTester {
 			else
 			{
 				int count = cardcounter.get(cardvalue).intValue();
-				cardcounter.put(cardvalue, count++);
+				cardcounter.put(cardvalue, new Integer(++count));
 			}
 		}
 		for (String arr : validarr)
