@@ -27,8 +27,24 @@ public class Deck {
 		return carddeck.length;
 	}
 
+	private boolean isAllUsed()
+	{
+		for (Card card : carddeck)
+		{
+			if (card.isUsed() == false)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
 	public Card getRandomCard() {
 		int cardIndex = (int) Math.floor(52*Math.random());
+		if (isAllUsed())
+		{
+			return null;
+		}
 		while (carddeck[cardIndex].isUsed())
 		{
 			cardIndex = (int) Math.floor(52*Math.random());
